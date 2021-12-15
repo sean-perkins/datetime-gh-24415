@@ -1,17 +1,40 @@
 <template>
-  <div id="container">
-    <strong>{{ name }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-item
+    id="datepicker"
+    button
+    detail="false"
+  >
+    <ion-label>Date example</ion-label>
+    <ion-icon
+      slot="end"
+      :icon="calendarOutline"
+    />
+    <ion-popover
+      trigger="datepicker"
+      size="cover"
+      show-backdrop="false"
+      translucent
+    >
+      <ion-datetime
+        first-day-of-week="1"
+        hour-cycle="h23"
+        size="cover"
+        show-default-time-label="false"
+        :presentation="presentation"
+      />
+    </ion-popover>
+</ion-item>
 </template>
 
 <script lang="ts">
+import { IonPopover, IonDatetime, IonIcon, IonItem, IonLabel } from '@ionic/vue'
 
 export default {
   name: 'ExploreContainer',
   props: {
     name: String
-  }
+  },
+  components: {IonPopover, IonDatetime, IonIcon, IonItem, IonLabel}
 }
 </script>
 
