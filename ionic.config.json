@@ -1,0 +1,7 @@
+{
+  "name": "datetime-popover",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
